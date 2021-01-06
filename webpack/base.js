@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({
-      root: path.resolve(__dirname, "../")
+      verbose: true
     }),
     new webpack.DefinePlugin({
       CANVAS_RENDERER: JSON.stringify(true),
@@ -36,5 +36,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./index.html"
     })
-  ]
+  ],
+  output: {
+    filename: 'phaser-exp.min.js',
+    path: path.resolve(__dirname, '../dist')
+  }
 };
