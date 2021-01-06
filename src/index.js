@@ -1,16 +1,16 @@
-import Phaser from 'phaser';
+import { Scene } from 'phaser';
 import logoImg from './assets/logo.png';
 
-class PhaserExperiments extends Phaser.Scene {
-  constructor () {
+class PhaserExperiments extends Scene {
+  constructor() {
     super();
   }
 
-  preload () {
+  preload() {
     this.load.image('logo', logoImg);
   }
     
-  create () {
+  create() {
     const logo = this.add.image(400, 150, 'logo');
     
     this.tweens.add({
@@ -33,3 +33,5 @@ const config = {
 };
 
 const game = new Phaser.Game(config);
+
+export default game;
